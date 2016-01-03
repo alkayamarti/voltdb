@@ -269,13 +269,13 @@ public abstract class CatalogSizing {
                 if (!inBytes) capacity *= MAX_BYTES_PER_UTF8_CHARACTER;
 
                 csize.widthMin += getVariableColumnSize(capacity, 0, forIndex, isNullable);
-                csize.widthMax += getVariableColumnSize(capacity, capacity, forIndex, isNullable);
+                csize.widthMax += getVariableColumnSize(capacity, capacity, forIndex, false);
                 break;
             }
             case VARBINARY: {
                 int capacity = column.getSize();
                 csize.widthMin += getVariableColumnSize(capacity, 0, forIndex, isNullable);
-                csize.widthMax += getVariableColumnSize(capacity, capacity, forIndex, isNullable);
+                csize.widthMax += getVariableColumnSize(capacity, capacity, forIndex, false);
                 break;
             }
             default: {
