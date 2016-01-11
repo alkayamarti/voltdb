@@ -71,7 +71,6 @@ class TableAndIndexTest : public Test {
             mem = 0;
             *reinterpret_cast<int64_t*>(signature) = 42;
             drStream.configure(44);
-            drStream.setDRProtocolVersion(DRTupleStream::PROTOCOL_VERSION);
 
             engine->setupForPlanFragments( NULL, 44, 44, 44, 44);
 
